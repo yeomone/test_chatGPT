@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ai를 활용한 문제해결능력 기르기</title>
+</head>
+<body>
+    <main>
+        <form action="post" id="frm">
+            <fieldset>
+                <legend class="skip">templates</legend>
+                <input type="text" name="userId" id="userId" placeholder="아이디를 입력하세요">
+                <input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력하세요">
+                <p class="error"><!--에러출력위치--></p>
+                <button type="button" id="btn">login</button>
+            </fieldset>
+        </form>
+    </main>
+    <script>
+        const inputId = document.querySelector('#userId')
+        const inputPw = document.querySelector('#userPw')
+        const errorP = document.querySelector('.error')
+        const btn = document.querySelector('#btn')
+
+        btn.addEventListener('click',()=>{
+            if(inputId.value==='' || inputPw.value ===''){
+                errorP.innerText = '아이디, 비밀번호를 입력하세요'
+            }else{
+                alert('로그인 성공')
+                errorP.innerText = ''
+            }
+        })
+    </script>
+</body>
+</html>
